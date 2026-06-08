@@ -2526,6 +2526,119 @@
       font-size: 12px;
       color: #888;
     }
+  
+    /* ===== 资源运营中心 ===== */
+  
+    .resource-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 16px;
+    }
+  
+    .resource-kpi {
+      background: #fff;
+      border-radius: 16px;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+    }
+  
+    .resource-kpi .value {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111827;
+    }
+  
+    .resource-kpi .label {
+      font-size: 12px;
+      color: #6B7280;
+      margin-top: 4px;
+    }
+  
+    .resource-section {
+      margin: 16px;
+    }
+  
+    .resource-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+  
+    .resource-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, .05);
+    }
+  
+    .resource-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .resource-card-name {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  
+    .resource-card-desc {
+      font-size: 13px;
+      color: #6B7280;
+      margin-top: 6px;
+    }
+  
+    .resource-tag {
+      background: #ECFDF5;
+      color: #059669;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+  
+    .alarm-critical {
+      color: #dc2626;
+      font-weight: 600;
+    }
+  
+    .alarm-warning {
+      color: #f59e0b;
+      font-weight: 600;
+    }
+  
+    /* 告警颜色 */
+    .red {
+      color: #EF4444 !important;
+      font-weight: 600;
+    }
+  
+    .orange {
+      color: #F59E0B !important;
+      font-weight: 600;
+    }
+  
+    .alarm-danger {
+      color: #EF4444 !important;
+      font-weight: 600;
+    }
+  
+    .alarm-warning {
+      color: #F59E0B !important;
+      font-weight: 600;
+    }
+
+    .status-danger {
+      color: #EF4444 !important;
+      font-weight: 600;
+    }
+  
+    .status-warning {
+      color: #F59E0B !important;
+      font-weight: 600;
+    }
   </style>
 
 </head>
@@ -7003,57 +7116,58 @@
 
     <!-- 功能九：【后台管理】首页 -->
     <div class="admin-page" id="page-admin">
+      <!-- 顶部驾驶舱 -->
       <div class="admin-header">
         <div>
           <div class="admin-title">
             约电能源运营指挥中心
           </div>
           <div class="admin-subtitle">
-            Energy Operation Center
+            Energy Operation Command Center
           </div>
         </div>
       </div>
-      <!-- 系统中心 -->
+      <!-- 管理中心 -->
       <div class="section-title">
-        系统管理中心
+        🏢 管理中心
       </div>
       <div class="admin-menu-grid">
         <div class="admin-menu" onclick="goto('admin-user')">
           👤
-          <span>用户中心</span>
+          <span>用户管理</span>
+        </div>
+        <div class="admin-menu" onclick="goto('admin-resource')">
+          🏗
+          <span>资源管理</span>
         </div>
         <div class="admin-menu" onclick="goto('admin-order')">
           📋
-          <span>订单中心</span>
+          <span>订单管理</span>
         </div>
         <div class="admin-menu" onclick="goto('admin-dispatch')">
-          🚚
-          <span>调度中心</span>
-        </div>
-        <div class="admin-menu" onclick="goto('admin-audit')">
-          ✔️
-          <span>审核中心</span>
-        </div>
-        <div class="admin-menu" onclick="goto('admin-resource')">
-          ⚙️
-          <span>资源中心</span>
+          📡
+          <span>调度管理</span>
         </div>
         <div class="admin-menu" onclick="goto('admin-vpp')">
-          ⚡
-          <span>VPP中心</span>
+          🏭
+          <span>VPP管理</span>
         </div>
         <div class="admin-menu" onclick="goto('admin-finance')">
           💰
-          <span>财务中心</span>
+          <span>财务管理</span>
         </div>
-        <div class="admin-menu" onclick="goto('admin-data')">
-          📊
-          <span>数据中心</span>
+        <div class="admin-menu" onclick="goto('admin-permission')">
+          🔐
+          <span>权限管理</span>
+        </div>
+        <div class="admin-menu" onclick="goto('admin-alarm')">
+          🚨
+          <span>告警管理</span>
         </div>
       </div>
-      <!-- KPI -->
+      <!-- 平台运行总览 -->
       <div class="section-title">
-        KPI概览
+        📈 平台运行总览
       </div>
       <div class="admin-kpi-grid">
         <div class="kpi-box">
@@ -7061,21 +7175,69 @@
           <div class="value">1,286</div>
         </div>
         <div class="kpi-box">
-          <div class="label">今日营收</div>
-          <div class="value">¥186,520</div>
+          <div class="label">执行任务</div>
+          <div class="value">138</div>
         </div>
         <div class="kpi-box">
-          <div class="label">在线服务师</div>
-          <div class="value">236</div>
+          <div class="label">在线资源</div>
+          <div class="value">356</div>
         </div>
         <div class="kpi-box">
-          <div class="label">在线储能车</div>
-          <div class="value">98</div>
+          <div class="label">活跃告警</div>
+          <div class="value red">12</div>
         </div>
       </div>
-      <!-- 业务监控 -->
+      <!-- 待办中心 -->
       <div class="section-title">
-        实时业务监控
+        ⏳ 待办中心
+      </div>
+      <div class="admin-kpi-grid">
+        <div class="kpi-box">
+          <div class="label">实名认证</div>
+          <div class="value">32</div>
+        </div>
+        <div class="kpi-box">
+          <div class="label">资源审核</div>
+          <div class="value">18</div>
+        </div>
+        <div class="kpi-box">
+          <div class="label">提现审核</div>
+          <div class="value">6</div>
+        </div>
+        <div class="kpi-box">
+          <div class="label">待处理告警</div>
+          <div class="value red">12</div>
+        </div>
+      </div>
+      <!-- 告警快报 -->
+      <div class="card">
+        <div class="section-title">
+          🚨 告警快报
+        </div>
+        <div class="admin-list">
+          <div class="list-item">
+            <span class="alarm-danger">
+              🔴 深圳南山充电桩离线
+            </span>
+            <span class="status-danger">严重</span>
+          </div>
+          <div class="list-item">
+            <span class="alarm-danger">
+              🔴 东莞储能车失联
+            </span>
+            <span class="status-danger">严重</span>
+          </div>
+          <div class="list-item">
+            <span class="alarm-warning">
+              🟠 VPP响应超时
+            </span>
+            <span class="status-warning">处理中</span>
+          </div>
+        </div>
+      </div>
+      <!-- 核心业务运行 -->
+      <div class="section-title">
+        ⚡ 业务运行概览
       </div>
       <div class="admin-kpi-grid">
         <div class="kpi-box">
@@ -7091,146 +7253,525 @@
           <div class="value">145</div>
         </div>
         <div class="kpi-box">
-          <div class="label">应急用电</div>
+          <div class="label">应急保电</div>
           <div class="value">91</div>
         </div>
       </div>
-      <!-- 返回APP首页 -->
-      <!-- <button class="btn" style="background:#eee" onclick="backApp()">← 返回APP</button> -->
     </div>
 
-    <!-- 功能九：【后台管理】 -- 1 - 用户中心 -->
-    <div class="page" id="page-admin-user">
+    <!-- 功能九：【后台管理】 -- 1 - 用户管理 -->
+    <div class="page" id="page-admin-user">    
       <div class="admin-page-header">
-        <h4>👤 用户账户与会员体系管理</h4>
-      </div>
-      <div class="admin-kpi-grid">
-        <div class="kpi-box">
+        <h4>👤 用户与账户管理</h4>    
+        <div class="desc">
+          用户账户、认证审核与生命周期管理
+        </div>
+      </div>    
+      <!-- 用户概览 -->    
+      <div class="resource-kpi-grid">    
+        <div class="resource-kpi">
+          <div class="value">58,632</div>
           <div class="label">注册用户</div>
-          <div class="value">128,620</div>
-        </div>
-        <div class="kpi-box">
+        </div>    
+        <div class="resource-kpi">
+          <div class="value">32,158</div>
           <div class="label">实名认证</div>
-          <div class="value">102,355</div>
+        </div>    
+        <div class="resource-kpi">
+          <div class="value">6,286</div>
+          <div class="label">企业用户</div>
+        </div>    
+        <div class="resource-kpi">
+          <div class="value">1,268</div>
+          <div class="label">待审核</div>
+        </div>    
+      </div>    
+      <!-- 普通用户 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          👥 用户管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">    
+            <div class="resource-card-name">
+              C端用户管理
+            </div>    
+            <div class="resource-tag">
+              58,632
+            </div>    
+          </div>    
+          <div class="resource-card-desc">
+            用户资料、行为数据、账户状态管理
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">    
+            <div class="resource-card-name">
+              企业用户管理
+            </div>    
+            <div class="resource-tag">
+              6,286
+            </div>    
+          </div>    
+          <div class="resource-card-desc">
+            企业客户、车队客户及能源客户管理
+          </div>    
+        </div>    
+      </div>    
+      <!-- 认证管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          🛡️ 认证中心
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">    
+            <div class="resource-card-name">
+              实名认证审核
+            </div>    
+            <div class="resource-tag">
+              待审268
+            </div>    
+          </div>    
+          <div class="resource-card-desc">
+            身份认证、银行卡认证审核
+          </div>    
         </div>
-        <div class="kpi-box">
-          <div class="label">绑定车辆</div>
-          <div class="value">89,236</div>
-        </div>
-        <div class="kpi-box">
-          <div class="label">VIP会员</div>
-          <div class="value">15,681</div>
-        </div>
-      </div>
-      <div class="admin-list">
-        <div class="list-item">
-          实名认证审核
-          <span>32待审核</span>
-        </div>
-        <div class="list-item">
-          车辆管理
-          <span>查看</span>
-        </div>
-        <div class="list-item">
-          会员等级管理
-          <span>查看</span>
-        </div>
-        <div class="list-item">
-          推荐返利管理
-          <span>查看</span>
-        </div>
-      </div>
+        <div class="resource-card">    
+          <div class="resource-card-header">    
+            <div class="resource-card-name">
+              企业认证审核
+            </div>    
+            <div class="resource-tag">
+              待审52
+            </div>    
+          </div>    
+          <div class="resource-card-desc">
+            企业营业执照及资质审核
+          </div>    
+        </div>    
+      </div>    
+      <!-- 用户运营 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          📈 用户运营
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">    
+            <div class="resource-card-name">
+              活跃用户分析
+            </div>    
+            <div class="resource-tag">
+              DAU
+            </div>    
+          </div>    
+          <div class="resource-card-desc">
+            日活、月活、留存率分析
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">    
+            <div class="resource-card-name">
+              用户行为分析
+            </div>    
+            <div class="resource-tag">
+              BI
+            </div>    
+          </div>    
+          <div class="resource-card-desc">
+            浏览、下单、充值及转化分析
+          </div>    
+        </div>    
+      </div>    
     </div>
 
-    <!-- 功能九：【后台管理】 -- 2 - 订单中心 -->
+    <!-- 功能九：【后台管理】 -- 2 - 订单管理 -->
     <div class="page" id="page-admin-order">
       <div class="admin-page-header">
-        <h4>📋 全业务订单统一管理</h4>
-      </div>
-      <div class="admin-kpi-grid">
-        <div class="kpi-box">
-          <div class="label">今日订单</div>
-          <div class="value">1286</div>
+        <h4>📋 订单管理中心</h4>
+        <div class="admin-page-desc">
+          统一管理平台各类订单及订单生命周期
         </div>
-        <div class="kpi-box">
-          <div class="label">处理中</div>
-          <div class="value">138</div>
-        </div>
-        <div class="kpi-box">
-          <div class="label">已完成</div>
-          <div class="value">1023</div>
-        </div>
-        <div class="kpi-box">
-          <div class="label">异常订单</div>
-          <div class="value">12</div>
-        </div>
-      </div>
-      <div class="business-tabs">
-        <div>充电订单</div>
-        <div>V2G订单</div>
-        <div>救援订单</div>
-        <div>应急订单</div>
-      </div>
+      </div>    
+      <!-- 订单总览 -->    
+      <div class="resource-overview">    
+        <div class="resource-kpi-grid">    
+          <div class="resource-kpi">
+            <div class="value">1286</div>
+            <div class="label">今日订单</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">138</div>
+            <div class="label">执行中</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">12</div>
+            <div class="label">异常订单</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">¥28万</div>
+            <div class="label">今日GMV</div>
+          </div>    
+        </div>    
+      </div>    
+      <!-- 订单状态管理 -->
+      <div class="resource-section">    
+        <div class="resource-title">
+          📌 订单状态管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              待支付订单
+            </div>    
+            <div class="resource-tag">
+              86单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            等待用户完成支付的订单
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              待派单订单
+            </div>    
+            <div class="resource-tag">
+              132单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            等待系统分配车辆、人员或设备
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              执行中订单
+            </div>    
+            <div class="resource-tag">
+              138单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            当前正在执行中的服务与能源订单
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              已完成订单
+            </div>    
+            <div class="resource-tag">
+              1023单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            已完成服务并完成结算的订单
+          </div>    
+        </div>    
+      </div>    
+      <!-- 订单分类管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          📦 订单分类管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              充电订单
+            </div>    
+            <div class="resource-tag">
+              326单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理扫码充电及公共充电业务订单
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              上门充电订单
+            </div>    
+            <div class="resource-tag">
+              856单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理储能车上门充电服务订单
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              V2G订单
+            </div>    
+            <div class="resource-tag">
+              126单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理车网互动及卖电收益订单
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              救援订单
+            </div>    
+            <div class="resource-tag">
+              52单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理道路救援及紧急充电订单
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              应急保电订单
+            </div>    
+            <div class="resource-tag">
+              28单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理临时供电及应急保障任务
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              VPP订单
+            </div>    
+            <div class="resource-tag">
+              18单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理虚拟电厂调度及收益订单
+          </div>    
+        </div>    
+      </div>    
+      <!-- 退款与售后 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          💰 退款与售后
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              退款申请
+            </div>    
+            <div class="resource-tag">
+              12单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            审核退款申请及退款处理进度
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              投诉订单
+            </div>    
+            <div class="resource-tag">
+              3单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            处理用户投诉及服务质量问题
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              争议订单
+            </div>    
+            <div class="resource-tag">
+              1单
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            处理订单争议及责任判定
+          </div>    
+        </div>    
+      </div>    
+      <!-- 订单工具 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          🛠 订单工具
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              订单查询
+            </div>    
+            <div class="resource-tag">
+              查询
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            按订单号、手机号、用户名称快速查询
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              订单导出
+            </div>    
+            <div class="resource-tag">
+              Excel
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            导出订单明细及统计报表
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              批量处理
+            </div>    
+            <div class="resource-tag">
+              批量
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            支持批量审核、关闭及归档订单
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              历史归档
+            </div>    
+            <div class="resource-tag">
+              归档
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理历史订单及归档记录
+          </div>    
+        </div>    
+      </div>    
     </div>
 
-    <!-- 功能九：【后台管理】 -- 3 - 调度中心 -->
+    <!-- 功能九：【后台管理】 -- 3 - 调度管理 -->
     <div class="page" id="page-admin-dispatch">
       <div class="admin-page-header">
-        <h4>🚚 智能派单与资源调度</h4>
-      </div>
-      <div class="dispatch-kpi-grid">
-        <div class="dispatch-kpi">
-          <div class="label">在线储能车</div>
-          <div class="value">98</div>
+        <h4>📡 调度中心</h4>
+        <div class="admin-page-desc">
+          统一管理平台资源调度、任务执行及应急响应
         </div>
+      </div>    
+      <!-- 调度概览 -->    
+      <div class="dispatch-kpi-grid">    
         <div class="dispatch-kpi">
-          <div class="label">在线救援车</div>
-          <div class="value">56</div>
-        </div>
+          <div class="label">在线资源</div>
+          <div class="value">356</div>
+        </div>    
         <div class="dispatch-kpi">
-          <div class="label">待派订单</div>
+          <div class="label">待调度任务</div>
           <div class="value">138</div>
-        </div>
+        </div>    
         <div class="dispatch-kpi">
-          <div class="label">执行中</div>
+          <div class="label">执行中任务</div>
           <div class="value">82</div>
-        </div>
-      </div>
-      <div class="dispatch-map-card">
-        <div class="map-header">
-          <span>🛰 实时调度地图</span>
-          <div class="map-tags">
+        </div>    
+        <div class="dispatch-kpi">
+          <div class="label">VPP响应中</div>
+          <div class="value">12</div>
+        </div>    
+      </div>    
+      <!-- 实时地图 -->    
+      <div class="dispatch-map-card">    
+        <div class="map-header">    
+          <span>🛰 实时调度地图</span>    
+          <div class="map-tags">    
             <span class="tag green">
               🔋 储能车
-            </span>
+            </span>    
             <span class="tag blue">
               🚑 救援车
-            </span>
+            </span>    
             <span class="tag orange">
-              ⚡ 订单
-            </span>
-          </div>
-        </div>
-        <div class="dispatch-map">
+              ⚡ 调度任务
+            </span>    
+          </div>    
+        </div>    
+        <div class="dispatch-map">    
           <div class="city city1">深圳</div>
           <div class="city city2">东莞</div>
           <div class="city city3">广州</div>
-          <div class="city city4">佛山</div>
+          <div class="city city4">佛山</div>    
           <div class="vehicle battery v1"></div>
           <div class="vehicle battery v2"></div>
-          <div class="vehicle battery v3"></div>
+          <div class="vehicle battery v3"></div>    
           <div class="vehicle rescue r1"></div>
-          <div class="vehicle rescue r2"></div>
+          <div class="vehicle rescue r2"></div>    
           <div class="order o1"></div>
           <div class="order o2"></div>
           <div class="order o3"></div>
         </div>
       </div>
-      <div class="heat-card">
+      <!-- 调度任务 -->
+      <div class="card">
+        <div class="section-title">
+          📋 实时调度任务
+        </div>
+        <div class="admin-list">    
+          <div class="list-item">
+            <span>深圳南山上门充电</span>
+            <span class="green">已派单</span>
+          </div>
+          <div class="list-item">
+            <span>东莞高速道路救援</span>
+            <span class="orange">执行中</span>
+          </div>
+          <div class="list-item">
+            <span>V2G调频任务</span>
+            <span class="blue">响应中</span>
+          </div>
+          <div class="list-item">
+            <span>广州应急保电任务</span>
+            <span class="red">待执行</span>
+          </div>
+        </div>
+      </div>
+      <!-- 调度控制台 -->    
+      <div class="card">    
+        <div class="section-title">
+          🎛 调度控制台
+        </div>
+        <div class="admin-menu-grid">    
+          <div class="admin-menu-item">
+            <div class="icon">🤖</div>
+            <div>智能派单</div>
+          </div>
+          <div class="admin-menu-item">
+            <div class="icon">👨‍💻</div>
+            <div>人工派单</div>
+          </div>
+          <div class="admin-menu-item">
+            <div class="icon">⚡</div>
+            <div>VPP调度</div>
+          </div>
+          <div class="admin-menu-item">
+            <div class="icon">🚨</div>
+            <div>应急调度</div>
+          </div>
+        </div>
+      </div>
+      <!-- 热点区域 -->    
+      <div class="heat-card">    
         <div class="heat-title">
           🔥 热点区域分析
         </div>
-        <div class="heat-row">
+        <div class="heat-row">    
           <div class="heat-item high">
             深圳南山
           </div>
@@ -7245,154 +7786,1163 @@
           </div>
         </div>
       </div>
-      <div class="admin-list">
-        <div class="list-item">
-          ⚡ 深圳南山充电订单
-          <span>已派单</span>
-        </div>
-        <div class="list-item">
-          🚑 东莞高速救援
-          <span>执行中</span>
-        </div>
-        <div class="list-item">
-          🔋 V2G调频任务
-          <span>进行中</span>
-        </div>
-        <div class="list-item">
-          ⚡ 广州应急供电
-          <span>待执行</span>
-        </div>
-      </div>
-      <button class="btn btn-primary">
-        智能调度
-      </button>
     </div>
 
-    <!-- 功能九：【后台管理】 -- 4 - 审核中心 -->
-    <div class="page" id="page-admin-audit">
+    <!-- 功能九：【后台管理】 -- 4 - 权限管理 -->
+    <div class="page" id="page-admin-permission">
       <div class="admin-page-header">
-        <h4>✔️ 智能权益审核</h4>
-      </div>
-      <div class="admin-list">
-        <div class="list-item">
-          实名认证审核
-          <span>32</span>
+        <h4>🔐 权限管理中心</h4>
+        <div class="admin-page-desc">
+          管理后台账号、角色权限及系统访问控制
         </div>
-        <div class="list-item">
-          城市股东审核
-          <span>18</span>
+      </div>    
+      <!-- 权限总览 -->    
+      <div class="resource-overview">    
+        <div class="resource-kpi-grid">    
+          <div class="resource-kpi">
+            <div class="value">126</div>
+            <div class="label">后台账号</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">12</div>
+            <div class="label">角色数量</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">286</div>
+            <div class="label">权限节点</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">98%</div>
+            <div class="label">在线率</div>
+          </div>    
+        </div>    
+      </div>    
+      <!-- 账号管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          👤 账号管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              管理员账号
+            </div>    
+            <div class="resource-tag">
+              36人
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理后台管理员账号信息及状态
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              调度员账号
+            </div>    
+            <div class="resource-tag">
+              18人
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理调度中心操作账号
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              财务账号
+            </div>    
+            <div class="resource-tag">
+              8人
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理财务中心专属账号
+          </div>    
+        </div>    
+      </div>    
+      <!-- 角色管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          🧩 角色管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              超级管理员
+            </div>    
+            <div class="resource-tag">
+              全权限
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            拥有平台全部管理权限
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              运营管理员
+            </div>    
+            <div class="resource-tag">
+              运营
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            负责用户、活动及运营管理
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              调度管理员
+            </div>    
+            <div class="resource-tag">
+              调度
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            负责资源调度及任务执行
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              财务管理员
+            </div>    
+            <div class="resource-tag">
+              财务
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            负责资金结算及财务管理
+          </div>    
+        </div>    
+      </div>    
+      <!-- 权限管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          🔑 权限管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              菜单权限
+            </div>    
+            <div class="resource-tag">
+              68项
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            配置后台菜单访问权限
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              数据权限
+            </div>    
+            <div class="resource-tag">
+              26项
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            配置区域、城市及业务数据权限
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              操作权限
+            </div>    
+            <div class="resource-tag">
+              192项
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            配置新增、编辑、删除及审核权限
+          </div>    
+        </div>    
+      </div>    
+      <!-- 组织架构 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          🏢 组织架构管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              总部组织
+            </div>    
+            <div class="resource-tag">
+              1个
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理总部部门及岗位结构
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              城市运营中心
+            </div>    
+            <div class="resource-tag">
+              18个
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理各城市运营组织架构
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              服务团队
+            </div>    
+            <div class="resource-tag">
+              56个
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理服务商及执行团队组织关系
+          </div>    
         </div>
-        <div class="list-item">
-          零元购车审核
-          <span>6</span>
-        </div>
-        <div class="list-item">
-          电站合作审核
-          <span>15</span>
-        </div>
-        <div class="list-item">
-          VPP备案审核
-          <span>8</span>
-        </div>
-      </div>
+      </div>    
+      <!-- 安全审计 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          🛡 安全审计
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              登录日志
+            </div>    
+            <div class="resource-tag">
+              实时
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            查看后台账号登录记录
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              操作日志
+            </div>    
+            <div class="resource-tag">
+              全量
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            查看后台所有操作记录
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              风险行为
+            </div>    
+            <div class="resource-tag">
+              2条
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            查看异常登录及高风险操作
+          </div>    
+        </div>    
+      </div>    
     </div>
 
     <!-- 功能九：【后台管理】 -- 5 - 资源中心 -->
     <div class="page" id="page-admin-resource">
       <div class="admin-page-header">
-        <h4>⚙️ 资源统筹与调度</h4>
+        <h4>⚙️ 统一管理平台人员、设备及合作资源</h4>
       </div>
-      <div class="admin-menu-grid">
-        <div class="admin-menu">
-          👨‍🔧
-          <span>服务师</span>
+      <!-- 资源总览 -->
+      <div class="resource-kpi-grid">
+        <div class="resource-kpi">
+          <div class="value">236</div>
+          <div class="label">服务师</div>
         </div>
-        <div class="admin-menu">
-          🚑
-          <span>救援师</span>
+        <div class="resource-kpi">
+          <div class="value">128</div>
+          <div class="label">救援师</div>
         </div>
-        <div class="admin-menu">
-          🔋
-          <span>储能车</span>
+        <div class="resource-kpi">
+          <div class="value">98</div>
+          <div class="label">储能车</div>
         </div>
-        <div class="admin-menu">
-          🏢
-          <span>合作电站</span>
+        <div class="resource-kpi">
+          <div class="value">236</div>
+          <div class="label">充电桩</div>
         </div>
-        <div class="admin-menu">
-          👥
-          <span>城市股东</span>
+        <div class="resource-kpi">
+          <div class="value">56</div>
+          <div class="label">合作电站</div>
+        </div>
+      </div>
+      <!-- 人员资源 -->
+      <div class="resource-section">
+        <div class="resource-title">
+          👨‍🔧 人员资源
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              服务师管理
+            </div>
+            <div class="resource-tag">
+              在线182
+            </div>
+          </div>
+          <div class="resource-card-desc">
+            管理服务师认证、排班、接单及绩效考核
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              救援师管理
+            </div>
+            <div class="resource-tag">
+              在线86
+            </div>
+          </div>
+          <div class="resource-card-desc">
+            管理救援师任务执行、区域覆盖及考核
+          </div>
+        </div>
+      </div>
+      <!-- 设备资源 -->
+      <div class="resource-section">
+        <div class="resource-title">
+          🔋 设备资源
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              储能车管理
+            </div>
+            <div class="resource-tag">
+              在线76
+            </div>
+          </div>
+          <div class="resource-card-desc">
+            管理储能车状态、SOC、电量及调度情况
+          </div>
+        </div>
+        <div class="resource-card">        
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              充电桩管理
+            </div>        
+            <div class="resource-tag">
+              在线236
+            </div>
+          </div>        
+          <div class="resource-card-desc">
+            管理充电桩在线状态、功率、利用率及告警信息
+          </div>        
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              IoT设备管理
+            </div>
+            <div class="resource-tag">
+              在线386
+            </div>
+          </div>
+          <div class="resource-card-desc">
+            管理终端通讯状态与设备在线率
+          </div>
+        </div>
+      </div>
+      <!-- 合作资源 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          🤝 合作资源
+        </div>
+        <div class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              合作电站管理
+            </div>
+            <div class="resource-tag">
+              56座
+            </div>
+          </div>
+          <div class="resource-card-desc">
+            管理合作电站接入、运营状态及收益情况
+          </div>
+        </div>
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              城市股东管理
+            </div>
+            <div class="resource-tag">
+              362人
+            </div>
+          </div>
+          <div class="resource-card-desc">
+            管理股东认证、权益及分红资格
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- 功能九：【后台管理】 -- 6 - VPP中心 -->
-    <div class="page" id="page-admin-vpp">
+    <!-- 功能九：【后台管理】 -- 6 - VPP管理 -->
+    <div class="page" id="page-admin-vpp">    
       <div class="admin-page-header">
-        <h4>⚡ VPP运营中心</h4>
-      </div>
-      <div class="admin-kpi-grid">
-        <div class="kpi-box">
-          <div class="label">入网车辆</div>
-          <div class="value">1386</div>
+        <h4>🏭 VPP管理中心</h4>
+        <div class="admin-page-desc">
+          管理虚拟电厂资源聚合、市场交易及调度履约
         </div>
-        <div class="kpi-box">
-          <div class="label">聚合容量</div>
-          <div class="value">38MW</div>
-        </div>
-        <div class="kpi-box">
-          <div class="label">调度任务</div>
-          <div class="value">92</div>
-        </div>
-        <div class="kpi-box">
-          <div class="label">履约率</div>
-          <div class="value">99.6%</div>
-        </div>
-      </div>
+      </div>    
+      <!-- VPP总览 -->    
+      <div class="resource-overview">    
+        <div class="resource-kpi-grid">    
+          <div class="resource-kpi">
+            <div class="value">286</div>
+            <div class="label">接入资源</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">258</div>
+            <div class="label">在线资源</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">56MW</div>
+            <div class="label">可调容量</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">¥86万</div>
+            <div class="label">本月收益</div>
+          </div>    
+        </div>    
+      </div>    
+      <!-- 聚合资源管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          🔋 聚合资源管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              储能车资源
+            </div>    
+            <div class="resource-tag">
+              98台
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理接入虚拟电厂的移动储能车资源
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              充电桩资源
+            </div>    
+            <div class="resource-tag">
+              236台
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理接入VPP的充电桩及负荷资源
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              储能柜资源
+            </div>    
+            <div class="resource-tag">
+              42台
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理固定储能系统及容量资源
+          </div>    
+        </div>    
+      </div>    
+      <!-- 市场交易管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          ⚡ 市场交易管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              需求响应
+            </div>    
+            <div class="resource-tag">
+              执行中
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理需求响应申报及执行情况
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              调频辅助服务
+            </div>    
+            <div class="resource-tag">
+              18次
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理调频市场参与记录
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              调压辅助服务
+            </div>    
+            <div class="resource-tag">
+              12次
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理调压及无功支撑业务
+          </div>    
+        </div>    
+      </div>    
+      <!-- 调度履约管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          📡 调度履约管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              调度指令管理
+            </div>    
+            <div class="resource-tag">
+              36条
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            查看及管理电网调度指令
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              履约监测
+            </div>    
+            <div class="resource-tag">
+              98%
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            监测资源响应率及履约情况
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              偏差考核
+            </div>    
+            <div class="resource-tag">
+              2项
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理履约偏差及考核记录
+          </div>    
+        </div>    
+      </div>    
+      <!-- 收益结算管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          💰 收益结算管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              收益结算
+            </div>    
+            <div class="resource-tag">
+              本月
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            查看虚拟电厂收益结算明细
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              分润管理
+            </div>    
+            <div class="resource-tag">
+              已完成
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理资源方收益分配及分润规则
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              结算账单
+            </div>    
+            <div class="resource-tag">
+              286份
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            查看及导出VPP结算账单
+          </div>    
+        </div>    
+      </div>    
     </div>
 
-    <!-- 功能九：【后台管理】 -- 7 - 财务中心 -->
-    <div class="page" id="page-admin-finance">
+    <!-- 功能九：【后台管理】 -- 7 - 财务管理 -->
+    <div class="page" id="page-admin-finance">    
       <div class="admin-page-header">
-        <h4>💰 财务概览</h4>
-      </div>
-      <div class="admin-kpi-grid">
-        <div class="kpi-box">
-          <div class="label">今日收入</div>
-          <div class="value">¥186,520</div>
+        <h4>💰 财务管理中心</h4>
+        <div class="admin-page-desc">
+          统一管理平台资金、结算、提现及账务数据
         </div>
-        <div class="kpi-box">
-          <div class="label">待提现</div>
-          <div class="value">¥68,200</div>
-        </div>
-        <div class="kpi-box">
-          <div class="label">VPP收益</div>
-          <div class="value">¥32,600</div>
-        </div>
-        <div class="kpi-box">
-          <div class="label">股东分红</div>
-          <div class="value">¥12,680</div>
-        </div>
-      </div>
+      </div>    
+      <!-- 财务总览 -->    
+      <div class="resource-overview">    
+        <div class="resource-kpi-grid">    
+          <div class="resource-kpi">
+            <div class="value">¥286万</div>
+            <div class="label">本月收入</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">¥182万</div>
+            <div class="label">已结算</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">¥36万</div>
+            <div class="label">待结算</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">¥8万</div>
+            <div class="label">提现中</div>
+          </div>    
+        </div>    
+      </div>    
+      <!-- 收入管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          💵 收入管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              充电服务收入
+            </div>    
+            <div class="resource-tag">
+              ¥128万
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理扫码充电及上门充电服务收入
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              V2G交易收入
+            </div>    
+            <div class="resource-tag">
+              ¥52万
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理车网互动及卖电交易收益
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              VPP市场收入
+            </div>    
+            <div class="resource-tag">
+              ¥68万
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理虚拟电厂调频调压及需求响应收益
+          </div>    
+        </div>    
+      </div>    
+      <!-- 结算管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          📑 结算管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              用户结算
+            </div>    
+            <div class="resource-tag">
+              286笔
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理用户收益及服务费用结算
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              合作伙伴结算
+            </div>    
+            <div class="resource-tag">
+              68家
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理电站、渠道及合作方结算
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              VPP收益结算
+            </div>    
+            <div class="resource-tag">
+              本月
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理虚拟电厂收益分配及结算
+          </div>    
+        </div>    
+      </div>    
+      <!-- 提现管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          🏦 提现管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              提现申请审核
+            </div>    
+            <div class="resource-tag">
+              32笔
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            审核用户及合作伙伴提现申请
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              提现记录
+            </div>    
+            <div class="resource-tag">
+              286笔
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            查看历史提现记录及状态
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              银行账户管理
+            </div>    
+            <div class="resource-tag">
+              156个
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理提现银行卡及收款账户
+          </div>    
+        </div>    
+      </div>    
+      <!-- 发票管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          🧾 发票管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              发票申请
+            </div>    
+            <div class="resource-tag">
+              18份
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理用户及企业发票申请
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              发票开具
+            </div>    
+            <div class="resource-tag">
+              已开具
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理电子发票及纸质发票开具
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              发票记录
+            </div>    
+            <div class="resource-tag">
+              568份
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            查询及导出发票记录
+          </div>    
+        </div>    
+      </div>    
+      <!-- 账务管理 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          📚 账务管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              财务流水
+            </div>    
+            <div class="resource-tag">
+              实时
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            查看平台资金流水及账户变动
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              对账管理
+            </div>    
+            <div class="resource-tag">
+              每日
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            管理支付渠道及银行对账
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              异常账务
+            </div>    
+            <div class="resource-tag">
+              3笔
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            处理支付失败及账务异常记录
+          </div>
+        </div>    
+      </div>    
     </div>
 
-    <!-- 功能九：【后台管理】 -- 8 - 数据中心 -->
-    <div class="page" id="page-admin-data">
+    <!-- 功能九：【后台管理】 -- 8 - 告警管理 -->
+    <div class="page" id="page-admin-alarm">    
       <div class="admin-page-header">
-        <h4>📊 数据概览</h4>
-      </div>
-      <div class="chart-card">
-        订单趋势图
-      </div>
-      <div class="chart-card">
-        营收趋势图
-      </div>
-      <div class="chart-card">
-        城市排行TOP10
-      </div>
-      <div class="chart-card">
-        VPP收益分析
-      </div>
+        <h4>🚨 告警中心</h4>
+        <div class="admin-page-desc">
+          统一管理平台设备、订单、调度、VPP及财务异常事件
+        </div>
+      </div>    
+      <!-- 告警总览 -->    
+      <div class="resource-overview">    
+        <div class="resource-kpi-grid">    
+          <div class="resource-kpi">
+            <div class="value">36</div>
+            <div class="label">活跃告警</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">12</div>
+            <div class="label">严重告警</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">286</div>
+            <div class="label">今日告警</div>
+          </div>    
+          <div class="resource-kpi">
+            <div class="value">92%</div>
+            <div class="label">已处理率</div>
+          </div>    
+        </div>    
+      </div>    
+      <!-- 告警分类 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          📂 告警分类
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              设备告警
+            </div>    
+            <div class="resource-tag">
+              12条
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            充电桩离线、储能车失联、设备故障等异常
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              订单告警
+            </div>    
+            <div class="resource-tag">
+              8条
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            超时订单、支付失败、退款异常等问题
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              调度告警
+            </div>    
+            <div class="resource-tag">
+              6条
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            派单失败、任务超时、响应超时等异常
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              VPP告警
+            </div>    
+            <div class="resource-tag">
+              5条
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            虚拟电厂资源失约及响应失败告警
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              财务告警
+            </div>    
+            <div class="resource-tag">
+              5条
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            提现失败、结算异常及支付风险告警
+          </div>    
+        </div>    
+      </div>    
+      <!-- 实时告警 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          🔴 实时告警
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              深圳南山充电桩离线
+            </div>    
+            <div class="resource-tag">
+              严重
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            离线时间：15分钟，已自动通知运维人员
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              东莞储能车失联
+            </div>    
+            <div class="resource-tag">
+              严重
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            GPS信号丢失，已触发应急联系机制
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              广州道路救援超时
+            </div>    
+            <div class="resource-tag">
+              处理中
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            服务超出承诺时长30分钟
+          </div>    
+        </div>    
+      </div>    
+      <!-- 告警处置 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          🛠 告警处置中心
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              待处理告警
+            </div>    
+            <div class="resource-tag">
+              18条
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            等待管理员确认及处理
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              处理中告警
+            </div>    
+            <div class="resource-tag">
+              12条
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            已分派责任人员处理中
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              已恢复告警
+            </div>    
+            <div class="resource-tag">
+              256条
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            已完成处理并恢复正常
+          </div>    
+        </div>    
+      </div>    
+      <!-- 告警规则 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          ⚙️ 告警规则管理
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              设备监测规则
+            </div>    
+            <div class="resource-tag">
+              18项
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            配置设备离线、故障及异常阈值
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              调度监测规则
+            </div>    
+            <div class="resource-tag">
+              12项
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            配置派单超时及任务超时规则
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              财务监测规则
+            </div>    
+            <div class="resource-tag">
+              8项
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            配置支付、提现及结算风险规则
+          </div>    
+        </div>    
+      </div>    
+      <!-- 告警通知 -->    
+      <div class="resource-section">    
+        <div class="resource-title">
+          📢 告警通知
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              短信通知
+            </div>    
+            <div class="resource-tag">
+              开启
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            严重告警自动短信通知责任人员
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              APP推送
+            </div>    
+            <div class="resource-tag">
+              开启
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            实时推送异常事件及处理进展
+          </div>    
+        </div>    
+        <div class="resource-card">    
+          <div class="resource-card-header">
+            <div class="resource-card-name">
+              微信通知
+            </div>    
+            <div class="resource-tag">
+              开启
+            </div>
+          </div>    
+          <div class="resource-card-desc">
+            企业微信及公众号消息提醒
+          </div>    
+        </div>    
+      </div>    
     </div>
 
     <!-- 功能十：【我的】首页 -->
@@ -8457,14 +10007,14 @@
           'vpp-control': '远程充放电管控',
           'vpp-monitor': '实时运行监测',
           'vpp-profit': '收益与结算',
-          'admin-user': '用户中心',
-          'admin-order': '订单中心',
-          'admin-dispatch': '调度中心',
-          'admin-audit': '审核中心',
-          'admin-resource': '资源中心',
-          'admin-vpp': 'VPP中心',
-          'admin-finance': '财务中心',
-          'admin-data': '数据中心'
+          'admin-user': '用户管理',
+          'admin-order': '订单管理',
+          'admin-dispatch': '调度管理',
+          'admin-permission': '权限管理',
+          'admin-resource': '资源管理',
+          'admin-vpp': 'VPP管理',
+          'admin-finance': '财务管理',
+          'admin-alarm': '告警管理'
         }
         document.getElementById('pageTitle').innerText = t[name] || '约电';
       }
